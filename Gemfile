@@ -34,14 +34,31 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
+  # rspec-rails is a testing framework for Rails 3.x and 4.x.
+  gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
+  # Shoulda Matchers provides RSpec- and Minitest-compatible one-liners to test common Rails functionality
+  gem 'shoulda-matchers', '~> 4.3'
+  # factory_bot_rails provides integration between factory_bot and rails 5.0 or newer
+  gem 'factory_bot_rails', '~> 6.0'
+  # Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, etc.
+  gem 'faker', '~> 2.12'
+  # Capybara is an integration testing tool. It simulates how a user would interact with a website
+  gem 'capybara', '~> 3.33'
+  # Webdrivers run Selenium tests more easily with install and updates for all supported webdrivers.
+  gem 'webdrivers', '~> 4.4', '>= 4.4.1'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
+  gem 'rubocop', '~> 0.81.0'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
 end
 
+group :test do
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
