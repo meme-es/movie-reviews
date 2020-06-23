@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'mini_magick', '~> 4.8'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+# Hirb provides a mini view framework for console applications and uses it to improve ripl(irb)
+gem 'hirb', '~> 0.7.3'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -44,7 +46,7 @@ group :development, :test do
   gem 'faker', '~> 2.12'
   # Capybara is an integration testing tool. It simulates how a user would interact with a website
   gem 'capybara', '~> 3.33'
-  # Webdrivers run Selenium tests more easily with install and updates for all supported webdrivers.
+  # Webdrivers run Selenium tests more easily with install and updates for all supported webdrivers
   gem 'webdrivers', '~> 4.4', '>= 4.4.1'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
