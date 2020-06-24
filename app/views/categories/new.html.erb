@@ -1,0 +1,24 @@
+<article>
+  <h1>New Category</h1>
+
+  <%= form_for @category do |f| %>
+    <ul>
+      <% @category.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+    <p>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :priority %><br />
+      <%= f.text_field :priority %>
+    </p>    
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
+
+  <%= link_to "Cancel", categories_path %>
+</article>

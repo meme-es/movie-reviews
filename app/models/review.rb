@@ -5,4 +5,6 @@ class Review < ApplicationRecord
   has_many :votes, dependent: :destroy
   validates :title, presence: true, length: { minimum: 15 }
   validates :text, presence: true, length: { minimum: 30 }
+
+  scope :desc, -> { order(created_at: :desc) }
 end

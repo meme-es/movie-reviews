@@ -1,0 +1,19 @@
+<h1>Category Deteils</h1>
+
+<h2><%= @category.name %></h2>
+<hr/>
+<div class="reviews-grid">
+  <% swap = true %>
+  <% @category.reviews.desc.each_slice(2) do |review1, review2| %>
+    <% if swap %>
+      <%= render partial: "regular_item", locals: {review: review1} %>
+      <%= render partial: "regular_item", locals: {review: review2} %>
+    <% else %>
+      <%= render partial: "inverse_item", locals: {review: review1}  %>
+      <%= render partial: "inverse_item", locals: {review: review2}  %>   
+    <% end %>
+    <% swap = !swap %>
+  <% end %>
+</div>
+
+<%= link_to "<< Back to the List", categories_path %>

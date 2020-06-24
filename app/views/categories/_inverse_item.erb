@@ -1,0 +1,13 @@
+<% unless review.nil? %>
+  <div class="review-item">
+    <div class="review-info">
+      <h3><%=  @category.name %></h3>
+      <h4><%=  review.title %></h4>
+      <p><%=  review.text %></p>
+      <%= link_to "Read More", review_path(review) %>
+    </div>
+    <div class="review-image">
+      <%= image_tag "no-image.png" %>
+    </div>
+</div>
+<% end %>

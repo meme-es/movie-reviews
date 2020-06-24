@@ -10,7 +10,6 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(parameters)
     @review.author_id = 1
-    @review.save
 
     if @review.save
       redirect_to reviews_path
