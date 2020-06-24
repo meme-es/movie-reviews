@@ -1,0 +1,31 @@
+<h1>All Reviews</h1>
+
+<%# <article class='showcase'>
+  <section class='cover'>
+    <div class='image-container'>
+      <img src='public/no-image.jpg' alt='Something dynamic here too'>
+    </div>
+    <h1>A title of the review here.. but dynamic</h1>
+    <p>And here the text of the same article but may be dynamic too.</p>
+  </section>
+
+  <article class='features'>
+    <section class='cover'>
+      <div class='image-container'>
+        <img src="#{Rails.root}/public/no-image.jpg" alt='Something dynamic here too'>
+      </div>
+      <h1>A title of the review here.. but dynamic</h1>
+      <p>And here the text of the same article but may be dynamic too.</p>
+    </section>   
+  </article>
+</article> %>
+
+<ul id="reviews">
+  <% @reviews.each do |review| %>
+    <li>
+      <%= link_to review.title, review_path(review) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "New Review", new_review_path %>

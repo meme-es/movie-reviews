@@ -1,0 +1,24 @@
+<article>
+  <h1>New Reviews</h1>
+
+  <%= form_for @review do |f| %>
+    <ul>
+      <% @review.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+    <p>
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label :text %><br />
+      <%= f.text_area :text %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
+
+  <%= link_to "Cancel", reviews_path %>
+</article>

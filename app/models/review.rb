@@ -4,5 +4,5 @@ class Review < ApplicationRecord
   has_many :categories, through: :classifications
   has_many :votes, dependent: :destroy
   validates :title, presence: true, length: { minimum: 15 }
-  validates :text, presence: true, length: { minimum: 50 }
+  validates :text, presence: true, length: { minimum: 30 }
 end
