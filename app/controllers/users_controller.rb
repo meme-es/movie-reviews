@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(parameters)
 
     if @user.save
-      redirect_to root_url, notice: 'User successfully created, login to write a review'
+      redirect_to root_url, notice: "User \"#{parameters[:name]}\" successfully Signed Up, login to write a review"
     else
       render :new
     end

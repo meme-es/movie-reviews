@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  before_action :authorize
+
   def index
     @categories = Category.all
   end
@@ -11,7 +13,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(parameters)
 
     if @category.save
-      redirect_to categories_path, notice: 'New category successfully created'
+      redirect_to categories_path, notice: "New category \"#{parameters[:name]}\" successfully created"
     else
       render :new
     end

@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  before_action :authorize
+
   def index
     @reviews = Review.all
   end
@@ -9,10 +11,10 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(parameters)
-    @review.author_id = 1
+    @review.author_id = session[:user_id]
 
     if @review.save
-      redirect_to reviews_path, notice: 'New review successfully created'
+      redirect_to reviews_path, notice: 'New review successfully created, you can check it in its category'
     else
       render :new
     end
