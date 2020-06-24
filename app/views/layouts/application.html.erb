@@ -10,11 +10,11 @@
   </head>
 
   <body>
-    <% if current_user %>
+    <% if session[:user_id] %>
       <nav class="navbar">
         <a class="navbar-brand" href="/">MovieReviews</a>
         <span class="navbar-text">
-          Logged in as <strong><%= current_user.name %></strong>
+          Logged in as <strong><%= session[:user_name] %></strong>
         </span>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">

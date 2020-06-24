@@ -6,6 +6,7 @@
     <%= link_to "Read More", review_path(review) %>
   </div>
   <div class="review-image">
-    <%= image_tag "no-image.png" %>
+    <% image_url = review.image.attached? ? review.image : "no-image.png" %>
+    <%= image_tag image_url, class: "review-image" %>    
   </div>
 </div>

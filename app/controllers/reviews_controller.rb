@@ -27,6 +27,6 @@ class ReviewsController < ApplicationController
   private
 
   def parameters
-    params.require(:review).permit(:title, :text)
+    params.require(:review).permit(:title, :text, :image)
   end
 end

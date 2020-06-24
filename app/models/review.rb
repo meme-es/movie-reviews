@@ -3,8 +3,9 @@ class Review < ApplicationRecord
   has_many :classifications, dependent: :destroy
   has_many :categories, through: :classifications
   has_many :votes, dependent: :destroy
+  has_one_attached :image, dependent: :destroy
   validates :title, presence: true, length: { minimum: 15 }
   validates :text, presence: true, length: { minimum: 30 }
 
-  scope :desc, -> { order(created_at: :desc) }
+  scope :desc, -> { includes(image_attachment: :blob).order(created_at: :desc) }
 end

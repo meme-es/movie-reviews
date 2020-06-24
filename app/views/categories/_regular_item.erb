@@ -1,6 +1,7 @@
 <div class="review-item">
   <div class="review-image">
-    <%= image_tag "no-image.png" %>
+    <% image_url = review.image.attached? ? review.image : "no-image.png" %>
+    <%= image_tag image_url, class: "review-image" %>    
   </div>
   <div class="review-info">
     <h3><%=  @category.name %></h3>
