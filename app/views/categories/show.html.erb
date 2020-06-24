@@ -6,11 +6,11 @@
   <% swap = true %>
   <% @category.reviews.desc.each_slice(2) do |review1, review2| %>
     <% if swap %>
-      <%= render partial: "regular_item", locals: {review: review1} %>
-      <%= render partial: "regular_item", locals: {review: review2} %>
+      <%= render partial: "regular_item", locals: {review: review1} unless review1.nil? %>
+      <%= render partial: "regular_item", locals: {review: review2} unless review2.nil? %>
     <% else %>
-      <%= render partial: "inverse_item", locals: {review: review1}  %>
-      <%= render partial: "inverse_item", locals: {review: review2}  %>   
+      <%= render partial: "inverse_item", locals: {review: review1} unless review1.nil? %>
+      <%= render partial: "inverse_item", locals: {review: review2} unless review2.nil? %>   
     <% end %>
     <% swap = !swap %>
   <% end %>

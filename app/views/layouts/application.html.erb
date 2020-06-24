@@ -10,6 +10,9 @@
   </head>
 
   <body>
+    <% if notice %>
+      <p class="notice-success"><%= notice %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>

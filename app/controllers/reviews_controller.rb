@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
     @review.author_id = 1
 
     if @review.save
-      redirect_to reviews_path
+      redirect_to reviews_path, notice: 'New review successfully created'
     else
       render :new
     end
