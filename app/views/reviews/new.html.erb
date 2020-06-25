@@ -19,6 +19,16 @@
       <%= f.label :image %><br />
       <%= f.file_field :image %>
     </p>
+
+    <h2>Select categories</h2>
+    <div class="categories">
+      <% @categories.each do |category| %>
+        <%= check_box_tag 'ids_list[]', category.id, false, class: "check-input", id: "check-#{category.id}" %>
+        <%= label_tag category.name, category.name, class: "check-label" %>
+      <% end %>
+    </div>
+    <br>
+
     <p>
       <%= f.submit %>
     </p>

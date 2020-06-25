@@ -5,6 +5,10 @@ class Category < ApplicationRecord
 
   before_validation :strip, only: [:name]
 
+  scope :by_priority, -> { order(priority: :desc) }
+  # below should be improved to take just the recent review
+  scope :four_most, -> { order(priority: :desc).includes(:reviews).take(4) }
+
   private
 
   def strip

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MovieReviews</title>
+    <title>Movie Reviews</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,7 +12,7 @@
   <body>
     <% if session[:user_id] %>
       <nav class="navbar">
-        <a class="navbar-brand" href="/">MovieReviews</a>
+        <a class="navbar-brand" href="/">MovieStyle</a>
         <span class="navbar-text">
           Logged in as <strong><%= session[:user_name] %></strong>
         </span>
@@ -20,8 +20,11 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon">the toggle</span>
         </button>
-        <div class="navbar-collapse collapse float-right" id="collapsibleNavbar">
-          <ul class="navbar-nav ml-auto">
+        <div class="nav-links">
+          <ul>
+            <li class="nav-item">
+              <%= link_to 'Home', root_path, class: 'nav-link' %>
+            </li>
             <li class="nav-item">
               <%= link_to 'Write a Review', new_review_path, class: 'nav-link' %>
             </li>
