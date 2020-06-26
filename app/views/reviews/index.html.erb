@@ -17,8 +17,8 @@
 
   <% if @four_most %>
     <article class="four-most">
-      <% @four_most.each do |item| %>
-        <%= render partial: "the_most", locals: {category: item} %>
+      <% @four_most.each do |category| %>
+        <%= render partial: "the_most", locals: {category: category} if category.reviews.count > 0 %>
       <% end %>
     </article>
   <% end %>
