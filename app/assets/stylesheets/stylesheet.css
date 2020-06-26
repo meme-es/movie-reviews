@@ -294,6 +294,27 @@ footer div {
   margin-right: 1em;
 }
 
+.article-form {
+  box-sizing: border-box;
+  width: 22em;
+  margin: 8em auto;
+  background: #fff;
+  padding: 2em;
+  font-size: 1em;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 2px 2px 2px 1px rgba(35, 35, 37, 0.829);
+}
+
+.article-form h1 {
+  margin-bottom: 1em;
+}
+
+.article-form p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
 @media (min-width: 768px) {
   .navbar,
   footer {
@@ -327,6 +348,17 @@ footer div {
   .footer-middle .terms {
     display: inline-block;
   }
+
+  .article-form a {
+    color: #fa6000;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .article-form a:hover {
+    border-bottom: 1px solid #fa6000;
+  }
+
 
   .nav-item a:hover:not(.active) {
     color: #fa6000;
