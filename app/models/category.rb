@@ -12,6 +12,6 @@ class Category < ApplicationRecord
   private
 
   def strip
-    self.name = name.strip
+    self.name = name.strip unless name.nil?
   end
 end
