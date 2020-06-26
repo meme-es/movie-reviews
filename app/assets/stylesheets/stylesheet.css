@@ -254,7 +254,7 @@ footer div {
 .review-info h3 {
   color: #f99b00;
   font-size: 0.96em;
-  border-bottom: 0.1em solid #f99b00;
+  text-decoration: underline;
   margin-bottom: 0.6em;
 }
 
@@ -275,14 +275,14 @@ footer div {
 
 .review-actions {
   position: absolute;
-  bottom: 8px;
+  bottom: 0;
 }
 
 .review-actions a {
+  color: #f99b00;
+  text-decoration: none;
   font-size: 14px;
   font-weight: bold;
-  color: #4e443e;
-  text-decoration: none;
 }
 
 .article-form a,
@@ -298,7 +298,7 @@ footer div {
 }
 
 .review-actions a:hover {
-  color: #fa6000;
+  text-decoration: underline;
 }
 
 .nav-item a:hover:not(.active) {
@@ -306,9 +306,9 @@ footer div {
   background-color: rgba(221, 218, 218, 0.24);
 }
 
-.vote {
-  margin-left: 1em;
-  margin-right: 1em;
+.img-vote {
+  height: 1.7em;
+  width: 1.7em;
 }
 
 .article-form {
@@ -419,7 +419,16 @@ footer div {
 
   .review-image img {
     width: 100%;
-    height: 15vh;
+    height: 100%;
+  }
+
+  .review-info {
+    max-width: 50%;
+    box-sizing: border-box;
+    position: relative;
+    font-size: 0.95em;
+    color: #222121;
+    padding: 0.8em;
   }
 
   .review-item {

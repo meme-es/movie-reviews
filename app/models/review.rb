@@ -20,6 +20,8 @@ class Review < ApplicationRecord
   end
 
   def self.featured
-    Review.all.order(created_at: :desc).includes(:votes).includes(image_attachment: :blob).max_by { |review| review.votes.length }
+    Review.all.order(created_at: :desc).includes(:votes).includes(image_attachment: :blob).max_by do |review|
+      review.votes.length
+    end
   end
 end
