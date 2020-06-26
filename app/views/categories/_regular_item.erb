@@ -1,0 +1,17 @@
+<div class="review-item">
+  <div class="review-image">
+    <% image_url = review.image.attached? ? review.image : "no-image.png" %>
+    <%= image_tag image_url, class: "review-image" %>    
+  </div>
+  <div class="review-info">
+    <h3><%=  @category.name %></h3>
+    <h4><%=  review.title %></h4>
+    <span>&#40;<%= review.author.name %>&#41;</span>
+    <p><%=  review.text %></p>
+    <div class="review-actions">
+      <!--<%= link_to "Read More", review_path(review) %>-->
+      <%= vote_undo_link(review.id, @category.id)%>
+      <span><%= review.votes.count %></span>
+    </div>
+  </div>
+</div>

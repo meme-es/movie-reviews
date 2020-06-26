@@ -1,0 +1,24 @@
+<article class="categories-list">
+  <h1>List of Categories</h1>
+
+  <table id="categories">
+    <thead>
+      <th>Name</th>
+      <th>Priority</th>
+    </thead>
+    <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td>
+          <%= link_to category.name, category_path(category) %>
+        </td>
+        <td>
+          <%= category.priority %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <br/>
+  <%= link_to "New Category", new_category_path %>
+</article>

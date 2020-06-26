@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Movie Reviews</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render partial: "layouts/navbar" %>
+
+    <main>
+      <% if notice %>
+        <p class="notice notice-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="notice alert-danger"><%= alert %></p>
+      <% end %>
+
+      <%= yield %>
+    </main>
+
+    <%= render partial: "layouts/footer" %>
+  </body>
+</html>

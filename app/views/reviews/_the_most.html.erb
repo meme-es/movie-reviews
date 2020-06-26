@@ -1,0 +1,9 @@
+<section class="most-item">
+  <div class="image-container">
+    <% review = category.reviews.last %>
+    <% image_url = review.image.attached? ? review.image : "no-image.png" %>
+    <%= link_to image_tag(image_url, class: "review-image"), category_path(category) %>
+  </div>
+  <h2 class="title-top"><%= category.name %></h2>
+  <h3 class="title-bottom"><%= review.title %></h3>
+</section>   

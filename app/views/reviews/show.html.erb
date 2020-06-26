@@ -1,0 +1,8 @@
+<h1>Reviews Deteils</h1>
+
+<h2><%= @review.title %></h2>
+<p><%= @review.text %></p>
+<% image_url = @review.image.attached? ? @review.image : "no-image.png" %>
+<%= image_tag image_url, class: "review-image" %>
+<br/>
+<%= link_to "<< Back to the List", reviews_path %>

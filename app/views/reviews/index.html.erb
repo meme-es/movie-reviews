@@ -1,0 +1,25 @@
+<article class="showcase">
+  <% if @featured %>
+    <section class="featured">
+      <div class="image-container">
+        <% image_url = @featured.image.attached? ? @featured.image : "no-image.png" %>
+        <%= image_tag image_url, class: "review-image" %>      
+      </div>
+      <div class="info">
+        <h2 class="title"><%= @featured.title %></h2>
+        <p class="text"><%= @featured.text %></p>
+      </div>
+      <div class="count-featured">
+        <%= @featured.votes.count %>
+      </div>
+    </section>
+  <% end %>
+
+  <% if @four_most %>
+    <article class="four-most">
+      <% @four_most.each do |category| %>
+        <%= render partial: "the_most", locals: {category: category} if category.reviews.count > 0 %>
+      <% end %>
+    </article>
+  <% end %>
+</article>

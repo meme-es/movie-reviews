@@ -1,0 +1,20 @@
+<article class="article-form">
+  <h1>New User</h1>
+
+  <%= form_for @user do |f| %>
+    <ul>
+      <% @user.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+    <p>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
+
+  <%= link_to "Cancel", reviews_path %>
+</article>
