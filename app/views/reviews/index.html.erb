@@ -1,17 +1,19 @@
-<article class='showcase'>
+<article class="showcase">
   <% if @featured %>
-    <section class='featured'>
-      <div class='image-container'>
+    <section class="featured">
+      <div class="image-container">
         <% image_url = @featured.image.attached? ? @featured.image : "no-image.png" %>
         <%= image_tag image_url, class: "review-image" %>      
-      </div>      
-      <h2><%= @featured.title %></h2>
-      <p><%= @featured.text %></p>
+      </div>
+      <div class="info">
+        <h2 class="title"><%= @featured.title %></h2>
+        <p class="text"><%= @featured.text %></p>
+      </div>
     </section>
   <% end %>
 
   <% if @four_most %>
-    <article class='four-most'>
+    <article class="four-most">
       <% @four_most.each do |item| %>
         <%= render partial: "the_most", locals: {category: item} %>
       <% end %>

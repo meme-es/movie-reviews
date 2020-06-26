@@ -1,0 +1,301 @@
+* {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #847f7b3a;
+}
+
+header {
+  color: #847f7b;
+}
+
+/* ### menu ### */
+
+.navbar {
+  height: 4.5em;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  background: #fff;
+  border-bottom: 0.25em solid #847f7b;
+  width: 100%;
+  z-index: 100;
+  font-size: 0.8em;
+}
+
+.logo {
+  padding-left: 0.5em;
+}
+
+.img-logo {
+  height: 2.8em;
+}
+
+.navbar ul {
+  list-style: none;
+}
+
+/* --- toggle --- */
+
+.menu-bar {
+  display: none;
+}
+
+#toggle-menu {
+  box-sizing: border-box;
+  height: 3.0625em;
+  width: 3.5em;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  padding: 0.875em 0.5em;
+}
+
+.item-bar {
+  background-color: #fa6000;
+  height: 0.25em;
+  width: 1.5em;
+  margin-top: 0.1875em;
+}
+
+.toggle-selected {
+  background-color: rgba(18, 78, 156, 0.2);
+}
+
+#toggle-menu:hover {
+  background-color: rgba(18, 78, 156, 0.1);
+}
+
+/* ### main ### */
+
+main {
+  padding-top: 3.65em;
+  position: relative;
+}
+
+.notice {
+  position: fixed;
+  top: 0.25em;
+  z-index: 200;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.notice-success {
+  color: rgba(16, 180, 98, 0.911);
+}
+
+.alert-danger {
+  color: rgba(179, 11, 11, 0.911);
+}
+
+/* ### image layout ### */
+
+img {
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+.featured img,
+.four-most img {
+  width: 100%;
+  height: auto;
+}
+
+.image-container {
+  overflow-y: auto;
+}
+
+/* --- home page --- */
+
+.featured,
+.most-item {
+  position: relative;
+}
+
+.info {
+  position: absolute;
+  left: 1em;
+  bottom: 0.5em;
+}
+
+.title-top {
+  position: absolute;
+  top: 0.5em;
+  left: 1em;
+}
+
+.title-bottom {
+  position: absolute;
+  bottom: 0.5em;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+/* --- reviews by category page --- */
+
+.review-item {
+  display: flex;
+}
+
+footer {
+  min-height: 4.5em;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  background: #4e443e;
+  width: 100%;
+  z-index: 100;
+  font-size: 0.8em;
+  color: rgb(190, 187, 187);
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+footer div {
+  flex: 1;
+}
+
+.img-logo-footer {
+  height: 1.8em;
+}
+
+.social-links {
+  list-style: none;
+  padding-left: 0;
+}
+
+.img-social {
+  height: 2.6em;
+}
+
+.footer-middle .terms {
+  display: none;
+}
+
+.footer-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.social-links li {
+  float: left;
+}
+
+.social-links a {
+  display: block;
+  text-align: center;
+  padding: 1em 0.4em;
+  text-decoration: none;
+}
+
+.footer-right span {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .navbar,
+  footer {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+
+  .menu-bar {
+    display: block;
+  }
+
+  li {
+    float: left;
+  }
+
+  li a {
+    display: block;
+    text-align: center;
+    padding: 1em 0.4em;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #847f7b;
+  }
+
+  .footer-middle a {
+    color: #fa6000;
+    text-decoration: none;
+  }
+
+  .footer-middle .terms {
+    display: inline-block;
+  }
+
+  .nav-item a:hover:not(.active) {
+    color: #fa6000;
+    background-color: rgba(221, 218, 218, 0.24);
+  }
+
+  .nav-separator {
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 0.4em;
+    font-size: 1.5em;
+    color: red;
+  }
+
+  #toggle-menu {
+    display: none;
+  }
+
+  .featured img {
+    width: 100%;
+    height: 62vh;
+  }
+
+  .four-most {
+    display: flex;
+  }
+
+  .four-most img {
+    max-width: 25vw;
+    height: 25vh;
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* ### footer ### */
+
+  .footer-left,
+  .footer-right {
+    flex: 4;
+  }
+
+  .footer-middle {
+    display: flex;
+    justify-content: center;
+    flex: 6;
+  }
+}
+
+@media (min-width: 901px) {
+  .footer-right span {
+    display: inline-block;
+  }
+}
+
+@media (min-width: 992px) {
+  main {
+    max-width: 992px;
+    margin: 0 auto;
+  }
+}

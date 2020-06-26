@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def authorize
-    redirect_to login_path, alert: 'Please Sign In to be able to perform an action!' unless session[:user_id]
+    redirect_to login_path, alert: 'Please Sign In to be able to perform any action!' unless session[:user_id]
   end
 end

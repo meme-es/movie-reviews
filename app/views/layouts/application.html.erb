@@ -10,42 +10,19 @@
   </head>
 
   <body>
-    <% if session[:user_id] %>
-      <nav class="navbar">
-        <a class="navbar-brand" href="/">MovieStyle</a>
-        <span class="navbar-text">
-          Logged in as <strong><%= session[:user_name] %></strong>
-        </span>
+    <%= render partial: "layouts/navbar" %>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon">the toggle</span>
-        </button>
-        <div class="nav-links">
-          <ul>
-            <li class="nav-item">
-              <%= link_to 'Home', root_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'Write a Review', new_review_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'Manage Categories', categories_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'Log Out', logout_path, class: 'nav-link' %>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    <% end %>
+    <main>
+      <% if notice %>
+        <p class="notice notice-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="notice alert-danger"><%= alert %></p>
+      <% end %>
 
+      <%= yield %>
+    </main>
 
-    <% if notice %>
-      <p class="notice-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert-danger"><%= alert %></p>
-    <% end %>
-    <%= yield %>
+    <%= render partial: "layouts/footer" %>
   </body>
 </html>

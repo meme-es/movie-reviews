@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :authorize
+  before_action :authorize, except: [:index]
 
   def index
     @featured = Review.featured
