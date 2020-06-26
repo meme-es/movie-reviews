@@ -9,6 +9,9 @@
         <h2 class="title"><%= @featured.title %></h2>
         <p class="text"><%= @featured.text %></p>
       </div>
+      <div class="count-featured">
+        <%= @featured.votes.count %>
+      </div>
     </section>
   <% end %>
 

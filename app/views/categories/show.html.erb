@@ -1,13 +1,15 @@
 <div class="reviews-grid">
   <% swap = true %>
   <% @reviews.each_slice(2) do |review1, review2| %>
-    <% if swap %>
-      <%= render partial: "regular_item", locals: {review: review1 } unless review1.nil? %>
-      <%= render partial: "regular_item", locals: {review: review2 } unless review2.nil? %>
-    <% else %>
-      <%= render partial: "inverse_item", locals: {review: review1 } unless review1.nil? %>
-      <%= render partial: "inverse_item", locals: {review: review2 } unless review2.nil? %>   
-    <% end %>
+    <div class="review-row">
+      <% if swap %>
+        <%= render partial: "regular_item", locals: {review: review1 } unless review1.nil? %>
+        <%= render partial: "regular_item", locals: {review: review2 } unless review2.nil? %>
+      <% else %>
+        <%= render partial: "inverse_item", locals: {review: review1 } unless review1.nil? %>
+        <%= render partial: "inverse_item", locals: {review: review2 } unless review2.nil? %>   
+      <% end %>
+    </div>
     <% swap = !swap %>
   <% end %>
 </div>

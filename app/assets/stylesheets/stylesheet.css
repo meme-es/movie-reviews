@@ -135,6 +135,21 @@ img {
   padding-bottom: 0.6em;
 }
 
+.count-featured {
+  box-sizing: border-box;
+  font-weight: bold;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  text-align: center;
+  right: 24px;
+  bottom: 24px;
+  padding-top: 6px;
+  background-color: #847f7bd3;
+  border-radius: 50%;
+}
+
 .title-top {
   position: absolute;
   top: 0.5em;
@@ -153,11 +168,7 @@ img {
   font-size: 0.99em;
 }
 
-/* --- reviews by category page --- */
-
-.review-item {
-  display: flex;
-}
+/* ### footer ### */
 
 footer {
   min-height: 4.5em;
@@ -215,6 +226,72 @@ footer div {
 
 .footer-right span {
   display: none;
+}
+
+.review-image img {
+  width: 100%;
+  height: 33vh;
+}
+
+.inverse {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.reviews-grid {
+  padding-bottom: 3.7em;
+}
+
+.review-info {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  font-size: 0.95em;
+  color: #222121;
+  padding: 0.8em;
+}
+
+.review-info h3 {
+  color: #f99b00;
+  font-size: 0.96em;
+  border-bottom: 0.1em solid #f99b00;
+  margin-bottom: 0.6em;
+}
+
+.review-info h4 {
+  font-size: 0.96em;
+}
+
+.review-info span {
+  display: inline-block;
+  font-size: 0.76em;
+  margin-bottom: 0.8em;
+}
+
+.review-info p {
+  font-size: 0.94em;
+  margin-bottom: 2em;
+}
+
+.review-actions {
+  position: absolute;
+  bottom: 8px;
+}
+
+.review-actions a {
+  font-size: 14px;
+  font-weight: bold;
+  color: #4e443e;
+  text-decoration: none;
+}
+
+.review-actions a:hover {
+  color: #fa6000;
+}
+
+.vote {
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 @media (min-width: 768px) {
@@ -282,9 +359,25 @@ footer div {
     height: 25vh;
   }
 
-  .reviews-grid {
+  /* ### reviews by category ### */
+
+  .review-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .review-image img {
+    width: 100%;
+    height: 15vh;
+  }
+
+  .review-item {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .review-item div {
+    flex: 1;
   }
 
   /* ### footer ### */
@@ -305,11 +398,31 @@ footer div {
   .footer-right span {
     display: inline-block;
   }
+
+  .review-image img {
+    height: 20vh;
+  }
 }
 
 @media (min-width: 992px) {
-  main {
+  .showcase {
     max-width: 992px;
     margin: 0 auto;
+  }
+
+  .review-image img {
+    height: 25vh;
+  }
+}
+
+@media (min-width: 1200) {
+  .review-image img {
+    height: 20vh;
+  }
+}
+
+@media (min-width: 1421) {
+  .review-image img {
+    height: 40vh;
   }
 }
