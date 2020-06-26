@@ -285,8 +285,25 @@ footer div {
   text-decoration: none;
 }
 
+.article-form a,
+.categories-list a {
+  color: #fa6000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.article-form a:hover,
+.categories-list a:hover {
+  border-bottom: 1px solid #fa6000;
+}
+
 .review-actions a:hover {
   color: #fa6000;
+}
+
+.nav-item a:hover:not(.active) {
+  color: #fa6000;
+  background-color: rgba(221, 218, 218, 0.24);
 }
 
 .vote {
@@ -313,6 +330,24 @@ footer div {
 .article-form p {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+}
+
+.categories-list {
+  width: 350px;
+  border-radius: 6px;
+  margin: 2em auto;
+  background-color: #fff;
+  padding: 2em;
+  text-align: center;
+  box-shadow: 2px 2px 2px 1px rgba(35, 35, 37, 0.829);
+}
+
+.categories-list h1 {
+  padding-bottom: 1em;
+}
+
+.categories-list table {
+  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
@@ -347,22 +382,6 @@ footer div {
 
   .footer-middle .terms {
     display: inline-block;
-  }
-
-  .article-form a {
-    color: #fa6000;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  .article-form a:hover {
-    border-bottom: 1px solid #fa6000;
-  }
-
-
-  .nav-item a:hover:not(.active) {
-    color: #fa6000;
-    background-color: rgba(221, 218, 218, 0.24);
   }
 
   .nav-separator {
