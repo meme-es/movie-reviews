@@ -99,7 +99,7 @@ main {
 
 img {
   object-fit: cover;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .featured img,
@@ -114,6 +114,11 @@ img {
 
 /* --- home page --- */
 
+.showcase {
+  color: #fff;
+  font-size: 0.85em;
+}
+
 .featured,
 .most-item {
   position: relative;
@@ -125,18 +130,27 @@ img {
   bottom: 0.5em;
 }
 
+.title {
+  color: #fa6000;
+  padding-bottom: 0.6em;
+}
+
 .title-top {
   position: absolute;
   top: 0.5em;
   left: 1em;
+  font-size: 1.2em;
+  padding-bottom: 0.1em;
+  border-bottom: solid 0.12em #fefe00;
 }
 
 .title-bottom {
   position: absolute;
-  bottom: 0.5em;
+  bottom: 1.7em;
   left: 0;
   right: 0;
   text-align: center;
+  font-size: 0.99em;
 }
 
 /* --- reviews by category page --- */
@@ -256,7 +270,7 @@ footer div {
 
   .featured img {
     width: 100%;
-    height: 62vh;
+    height: 61.5vh;
   }
 
   .four-most {
